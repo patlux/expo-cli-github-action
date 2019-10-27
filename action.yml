@@ -1,0 +1,17 @@
+# action.yml
+name: 'expo-cli github action'
+description: 'Use expo-cli for github actions'
+author: Patrick Wozniak <email@patwoz.de>
+inputs:
+  who-to-greet: # id of input
+    description: 'Who to greet'
+    required: true
+    default: 'World'
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: 'docker'
+  image: 'patwoz/expo-cli:3'
+  args:
+    - ${{ inputs.who-to-greet }}
